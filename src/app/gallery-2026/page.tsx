@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PhotoIcon, VideoCameraIcon, XMarkIcon, SparklesIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
@@ -192,11 +193,14 @@ const GalleryPage = () => {
                                             }}
                                         />
                                     ) : (
-                                        <img
-                                            src={item.src}
-                                            alt={item.title}
-                                            className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                        />
+                                        <div className="relative aspect-[4/5] overflow-hidden">
+                                            <Image
+                                                src={item.src}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                            />
+                                        </div>
                                     )}
 
                                     {/* Media Icon Overlay */}
@@ -276,10 +280,11 @@ const GalleryPage = () => {
                                         className={`relative w-full h-full flex items-center justify-center overflow-hidden ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
                                         onClick={handleImageClick}
                                     >
-                                        <img
+                                        <Image
                                             src={selectedItem.src}
                                             alt={selectedItem.title}
-                                            className="w-full h-full object-contain transition-transform duration-500 ease-in-out"
+                                            fill
+                                            className="object-contain transition-transform duration-500 ease-in-out"
                                             style={{
                                                 transform: isZoomed ? "scale(3)" : "scale(1)",
                                                 transformOrigin: zoomOrigin
