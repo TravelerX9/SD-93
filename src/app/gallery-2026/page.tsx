@@ -264,7 +264,7 @@ const GalleryPage = () => {
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="w-full h-full flex items-center justify-center overflow-hidden"
+                            className="w-full h-full flex items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <div className="relative w-full h-full flex items-center justify-center">
