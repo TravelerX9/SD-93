@@ -74,9 +74,8 @@ const galleryItems = [
     { id: "vid-8", type: "video", title: "Video ke-8", category: "Ramadhan 2026", src: "/video/8.mp4" },
     { id: "vid-9", type: "video", title: "Video ke-9", category: "Ramadhan 2026", src: "/video/9.mp4" },
     { id: "vid-10", type: "video", title: "Video ke-10", category: "Ramadhan 2026", src: "/video/10.mp4" },
-    { id: "vid-11", type: "video", title: "Video ke-11", category: "Ramadhan 2026", src: "/video/11.mp4" },
-    { id: "vid-12", type: "video", title: "Video ke-12", category: "Ramadhan 2026", src: "/video/12.mp4" },
-    { id: "vid-13", type: "video", title: "Video ke-13", category: "Ramadhan 2026", src: "/video/13.mp4" },
+    { id: "vid-12", type: "video", title: "Video ke-12", category: "Ramadhan 2026", src: "/video/11.mp4" },
+    { id: "vid-13", type: "video", title: "Video ke-13", category: "Ramadhan 2026", src: "/video/12.mp4" },
 ];
 
 const GalleryPage = () => {
@@ -211,7 +210,10 @@ const GalleryPage = () => {
                                                         className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                                                         muted
                                                         playsInline
-                                                        onMouseOver={(e) => (e.target as HTMLVideoElement).play()}
+                                                        onMouseOver={(e) => {
+                                                            const video = e.target as HTMLVideoElement;
+                                                            video.play().catch(() => {});
+                                                        }}
                                                         onMouseOut={(e) => {
                                                             const video = e.target as HTMLVideoElement;
                                                             video.pause();
