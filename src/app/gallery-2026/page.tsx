@@ -33,6 +33,7 @@ const galleryItems = [
     { id: "img-24", type: "image", title: "Momen ke-24", category: "Ramadhan 2026", src: "/foto/24.jpeg" },
     { id: "img-25", type: "image", title: "Momen ke-25", category: "Ramadhan 2026", src: "/foto/25.jpeg" },
     { id: "img-26", type: "image", title: "Momen ke-26", category: "Ramadhan 2026", src: "/foto/26.jpeg" },
+    { id: "img-27", type: "image", title: "Momen ke-27", category: "Ramadhan 2026", src: "/foto/27.jpeg" },
     { id: "img-28", type: "image", title: "Momen ke-28", category: "Ramadhan 2026", src: "/foto/28.jpeg" },
     { id: "img-29", type: "image", title: "Momen ke-29", category: "Ramadhan 2026", src: "/foto/29.jpeg" },
     { id: "img-30", type: "image", title: "Momen ke-30", category: "Ramadhan 2026", src: "/foto/30.jpeg" },
@@ -63,6 +64,20 @@ const galleryItems = [
     { id: "img-55", type: "image", title: "Momen ke-55", category: "Ramadhan 2026", src: "/foto/55.jpeg" },
     { id: "img-56", type: "image", title: "Momen ke-56", category: "Ramadhan 2026", src: "/foto/56.jpeg" },
     { id: "img-57", type: "image", title: "Momen ke-57", category: "Ramadhan 2026", src: "/foto/57.jpeg" },
+    { id: "img-58", type: "image", title: "Momen ke-58", category: "Ramadhan 2026", src: "/foto/58.jpeg" },
+    { id: "img-59", type: "image", title: "Momen ke-59", category: "Ramadhan 2026", src: "/foto/59.jpeg" },
+    { id: "img-60", type: "image", title: "Momen ke-60", category: "Ramadhan 2026", src: "/foto/60.jpeg" },
+    { id: "img-61", type: "image", title: "Momen ke-61", category: "Ramadhan 2026", src: "/foto/61.jpeg" },
+    { id: "img-62", type: "image", title: "Momen ke-62", category: "Ramadhan 2026", src: "/foto/62.jpeg" },
+    { id: "img-63", type: "image", title: "Momen ke-63", category: "Ramadhan 2026", src: "/foto/63.jpeg" },
+    { id: "img-64", type: "image", title: "Momen ke-64", category: "Ramadhan 2026", src: "/foto/64.jpeg" },
+    { id: "img-65", type: "image", title: "Momen ke-65", category: "Ramadhan 2026", src: "/foto/65.jpeg" },
+    { id: "img-66", type: "image", title: "Momen ke-66", category: "Ramadhan 2026", src: "/foto/66.jpeg" },
+    { id: "img-67", type: "image", title: "Momen ke-67", category: "Ramadhan 2026", src: "/foto/67.jpeg" },
+    { id: "img-68", type: "image", title: "Momen ke-68", category: "Ramadhan 2026", src: "/foto/68.jpeg" },
+    { id: "img-69", type: "image", title: "Momen ke-69", category: "Ramadhan 2026", src: "/foto/69.jpeg" },
+    { id: "img-70", type: "image", title: "Momen ke-70", category: "Ramadhan 2026", src: "/foto/70.jpeg" },
+    { id: "img-71", type: "image", title: "Momen ke-71", category: "Ramadhan 2026", src: "/foto/71.jpeg" },
     // Videos
     { id: "vid-1", type: "video", title: "Video ke-1", category: "Ramadhan 2026", src: "/video/1.mp4" },
     { id: "vid-2", type: "video", title: "Video ke-2", category: "Ramadhan 2026", src: "/video/2.mp4" },
@@ -73,9 +88,6 @@ const galleryItems = [
     { id: "vid-7", type: "video", title: "Video ke-7", category: "Ramadhan 2026", src: "/video/7.mp4" },
     { id: "vid-8", type: "video", title: "Video ke-8", category: "Ramadhan 2026", src: "/video/8.mp4" },
     { id: "vid-9", type: "video", title: "Video ke-9", category: "Ramadhan 2026", src: "/video/9.mp4" },
-    { id: "vid-10", type: "video", title: "Video ke-10", category: "Ramadhan 2026", src: "/video/10.mp4" },
-    { id: "vid-12", type: "video", title: "Video ke-12", category: "Ramadhan 2026", src: "/video/11.mp4" },
-    { id: "vid-13", type: "video", title: "Video ke-13", category: "Ramadhan 2026", src: "/video/12.mp4" },
 ];
 
 const GalleryPage = () => {
@@ -212,7 +224,7 @@ const GalleryPage = () => {
                                                         playsInline
                                                         onMouseOver={(e) => {
                                                             const video = e.target as HTMLVideoElement;
-                                                            video.play().catch(() => {});
+                                                            video.play().catch(() => { });
                                                         }}
                                                         onMouseOut={(e) => {
                                                             const video = e.target as HTMLVideoElement;
