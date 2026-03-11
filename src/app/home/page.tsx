@@ -40,7 +40,7 @@ const Home = () => {
         <section className="relative h-[100vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/hero.png"
+              src="/images/hero.png"
               alt="SMP RAJAWALI Campus"
               fill
               className="object-cover object-center brightness-[0.7] dark:brightness-[0.4]"
@@ -151,7 +151,7 @@ const Home = () => {
                   className="relative group aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl"
                 >
                   <Image
-                    src={`/galery/${id}.jpeg`}
+                    src={`/foto/${id}.jpeg`}
                     alt={`Event Photo ${id}`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -223,7 +223,7 @@ const Home = () => {
               className="relative"
             >
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl z-10">
-                <Image src="/academic.png" alt="Siswa SMP" width={600} height={400} className="object-cover" />
+                <Image src="/images/academic.png" alt="Siswa SMP" width={600} height={400} className="object-cover" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-orange-500 rounded-[3rem] z-0 hidden lg:block" />
               <div className="absolute top-20 -left-8 -translate-y-1/2 p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-2xl z-20 hidden lg:flex items-center space-x-4">

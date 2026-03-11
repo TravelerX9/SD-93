@@ -5,82 +5,90 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PhotoIcon, VideoCameraIcon, XMarkIcon, SparklesIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const galleryItems = [
-    { id: "1", type: "image", title: "Momen ke-1", category: "Ramadhan 2026", src: "/galery/1.jpeg" },
-    { id: "2", type: "image", title: "Momen ke-2", category: "Ramadhan 2026", src: "/galery/2.jpeg" },
-    { id: "3", type: "image", title: "Momen ke-3", category: "Ramadhan 2026", src: "/galery/3.jpeg" },
-    { id: "4", type: "image", title: "Momen ke-4", category: "Ramadhan 2026", src: "/galery/4.jpeg" },
-    { id: "5", type: "image", title: "Momen ke-5", category: "Ramadhan 2026", src: "/galery/5.jpeg" },
-    { id: "6", type: "image", title: "Momen ke-6", category: "Ramadhan 2026", src: "/galery/6.jpeg" },
-    { id: "7", type: "image", title: "Momen ke-7", category: "Ramadhan 2026", src: "/galery/7.jpeg" },
-    { id: "8", type: "image", title: "Momen ke-8", category: "Ramadhan 2026", src: "/galery/8.jpeg" },
-    { id: "9", type: "image", title: "Momen ke-9", category: "Ramadhan 2026", src: "/galery/9.jpeg" },
-    { id: "10", type: "image", title: "Momen ke-10", category: "Ramadhan 2026", src: "/galery/10.jpeg" },
-    { id: "11", type: "image", title: "Momen ke-11", category: "Ramadhan 2026", src: "/galery/11.jpeg" },
-    { id: "12", type: "image", title: "Momen ke-12", category: "Ramadhan 2026", src: "/galery/12.jpeg" },
-    { id: "13", type: "image", title: "Momen ke-13", category: "Ramadhan 2026", src: "/galery/13.jpeg" },
-    { id: "14", type: "image", title: "Momen ke-14", category: "Ramadhan 2026", src: "/galery/14.jpeg" },
-    { id: "14=", type: "image", title: "Momen ke-14 extra", category: "Ramadhan 2026", src: "/galery/14=.jpeg" },
-    { id: "15", type: "image", title: "Momen ke-15", category: "Ramadhan 2026", src: "/galery/15.jpeg" },
-    { id: "16", type: "image", title: "Momen ke-16", category: "Ramadhan 2026", src: "/galery/16.jpeg" },
-    { id: "17", type: "image", title: "Momen ke-17", category: "Ramadhan 2026", src: "/galery/17.jpeg" },
-    { id: "18", type: "image", title: "Momen ke-18", category: "Ramadhan 2026", src: "/galery/18.jpeg" },
-    { id: "19", type: "image", title: "Momen ke-19", category: "Ramadhan 2026", src: "/galery/19.jpeg" },
-    { id: "20", type: "image", title: "Momen ke-20", category: "Ramadhan 2026", src: "/galery/20.jpeg" },
-    { id: "21", type: "image", title: "Momen ke-21", category: "Ramadhan 2026", src: "/galery/21.jpeg" },
-    { id: "22", type: "image", title: "Momen ke-22", category: "Ramadhan 2026", src: "/galery/22.jpeg" },
-    { id: "23", type: "image", title: "Momen ke-23", category: "Ramadhan 2026", src: "/galery/23.jpeg" },
-    { id: "24", type: "image", title: "Momen ke-24", category: "Ramadhan 2026", src: "/galery/24.jpeg" },
-    { id: "25", type: "image", title: "Momen ke-25", category: "Ramadhan 2026", src: "/galery/25.jpeg" },
-    { id: "26", type: "image", title: "Momen ke-26", category: "Ramadhan 2026", src: "/galery/26.jpeg" },
-    { id: "27", type: "video", title: "Momen ke-27", category: "Ramadhan 2026", src: "/galery/27.mp4" },
-    { id: "28", type: "image", title: "Momen ke-28", category: "Ramadhan 2026", src: "/galery/28.jpeg" },
-    { id: "29", type: "image", title: "Momen ke-29", category: "Ramadhan 2026", src: "/galery/29.jpeg" },
-    { id: "30", type: "image", title: "Momen ke-30", category: "Ramadhan 2026", src: "/galery/30.jpeg" },
-    { id: "31", type: "image", title: "Momen ke-31", category: "Ramadhan 2026", src: "/galery/31.jpeg" },
-    { id: "32", type: "video", title: "Momen ke-32", category: "Ramadhan 2026", src: "/galery/32.mp4" },
-    { id: "33", type: "image", title: "Momen ke-33", category: "Ramadhan 2026", src: "/galery/33.jpeg" },
-    { id: "34", type: "image", title: "Momen ke-34", category: "Ramadhan 2026", src: "/galery/34.jpeg" },
-    { id: "35", type: "video", title: "Momen ke-35", category: "Ramadhan 2026", src: "/galery/35.mp4" },
-    { id: "36", type: "image", title: "Momen ke-36", category: "Ramadhan 2026", src: "/galery/36.jpeg" },
-    { id: "37", type: "image", title: "Momen ke-37", category: "Ramadhan 2026", src: "/galery/37.jpeg" },
-    { id: "38", type: "image", title: "Momen ke-38", category: "Ramadhan 2026", src: "/galery/38.jpeg" },
-    { id: "39", type: "image", title: "Momen ke-39", category: "Ramadhan 2026", src: "/galery/39.jpeg" },
-    { id: "40", type: "image", title: "Momen ke-40", category: "Ramadhan 2026", src: "/galery/40.jpeg" },
-    { id: "41", type: "image", title: "Momen ke-41", category: "Ramadhan 2026", src: "/galery/41.jpeg" },
-    { id: "42", type: "image", title: "Momen ke-42", category: "Ramadhan 2026", src: "/galery/42.jpeg" },
-    { id: "43", type: "image", title: "Momen ke-43", category: "Ramadhan 2026", src: "/galery/43.jpeg" },
-    { id: "44", type: "image", title: "Momen ke-44", category: "Ramadhan 2026", src: "/galery/44.jpeg" },
-    { id: "45", type: "image", title: "Momen ke-45", category: "Ramadhan 2026", src: "/galery/45.jpeg" },
-    { id: "46", type: "image", title: "Momen ke-46", category: "Ramadhan 2026", src: "/galery/46.jpeg" },
-    { id: "47", type: "image", title: "Momen ke-47", category: "Ramadhan 2026", src: "/galery/47.jpeg" },
-    { id: "48", type: "image", title: "Momen ke-48", category: "Ramadhan 2026", src: "/galery/48.jpeg" },
-    { id: "49", type: "image", title: "Momen ke-49", category: "Ramadhan 2026", src: "/galery/49.jpeg" },
-    { id: "50-img", type: "image", title: "Momen ke-50", category: "Ramadhan 2026", src: "/galery/50.jpeg" },
-    { id: "50-vid", type: "video", title: "Video ke-50", category: "Ramadhan 2026", src: "/galery/50.mp4" },
-    { id: "51", type: "video", title: "Momen ke-51", category: "Ramadhan 2026", src: "/galery/51.mp4" },
-    { id: "52", type: "image", title: "Momen ke-52", category: "Ramadhan 2026", src: "/galery/52.jpeg" },
-    { id: "53", type: "image", title: "Momen ke-53", category: "Ramadhan 2026", src: "/galery/53.jpeg" },
-    { id: "54", type: "image", title: "Momen ke-54", category: "Ramadhan 2026", src: "/galery/54.jpeg" },
-    { id: "55", type: "video", title: "Momen ke-55", category: "Ramadhan 2026", src: "/galery/55.mp4" },
-    { id: "56", type: "video", title: "Momen ke-56", category: "Ramadhan 2026", src: "/galery/56.mp4" },
-    { id: "57", type: "video", title: "Momen ke-57", category: "Ramadhan 2026", src: "/galery/57.mp4" },
-    { id: "58", type: "video", title: "Momen ke-58", category: "Ramadhan 2026", src: "/galery/58.mp4" },
-    { id: "62", type: "image", title: "Momen ke-62", category: "Ramadhan 2026", src: "/galery/62.jpeg" },
-    { id: "63", type: "image", title: "Momen ke-63", category: "Ramadhan 2026", src: "/galery/63.jpeg" },
-    { id: "64", type: "image", title: "Momen ke-64", category: "Ramadhan 2026", src: "/galery/64.jpeg" },
-    { id: "65", type: "image", title: "Momen ke-65", category: "Ramadhan 2026", src: "/galery/65.jpeg" },
-    { id: "76", type: "video", title: "Momen ke-76", category: "Ramadhan 2026", src: "/galery/76.mp4" },
-    { id: "77", type: "video", title: "Momen ke-77", category: "Ramadhan 2026", src: "/galery/77.mp4" },
-    { id: "78", type: "video", title: "Momen ke-78", category: "Ramadhan 2026", src: "/galery/78.mp4" },
-    { id: "79", type: "video", title: "Momen ke-79", category: "Ramadhan 2026", src: "/galery/79.mp4" },
+    // Photos
+    { id: "img-1", type: "image", title: "Momen ke-1", category: "Ramadhan 2026", src: "/foto/1.jpeg" },
+    { id: "img-2", type: "image", title: "Momen ke-2", category: "Ramadhan 2026", src: "/foto/2.jpeg" },
+    { id: "img-3", type: "image", title: "Momen ke-3", category: "Ramadhan 2026", src: "/foto/3.jpeg" },
+    { id: "img-4", type: "image", title: "Momen ke-4", category: "Ramadhan 2026", src: "/foto/4.jpeg" },
+    { id: "img-5", type: "image", title: "Momen ke-5", category: "Ramadhan 2026", src: "/foto/5.jpeg" },
+    { id: "img-6", type: "image", title: "Momen ke-6", category: "Ramadhan 2026", src: "/foto/6.jpeg" },
+    { id: "img-7", type: "image", title: "Momen ke-7", category: "Ramadhan 2026", src: "/foto/7.jpeg" },
+    { id: "img-8", type: "image", title: "Momen ke-8", category: "Ramadhan 2026", src: "/foto/8.jpeg" },
+    { id: "img-9", type: "image", title: "Momen ke-9", category: "Ramadhan 2026", src: "/foto/9.jpeg" },
+    { id: "img-10", type: "image", title: "Momen ke-10", category: "Ramadhan 2026", src: "/foto/10.jpeg" },
+    { id: "img-11", type: "image", title: "Momen ke-11", category: "Ramadhan 2026", src: "/foto/11.jpeg" },
+    { id: "img-12", type: "image", title: "Momen ke-12", category: "Ramadhan 2026", src: "/foto/12.jpeg" },
+    { id: "img-13", type: "image", title: "Momen ke-13", category: "Ramadhan 2026", src: "/foto/13.jpeg" },
+    { id: "img-14", type: "image", title: "Momen ke-14", category: "Ramadhan 2026", src: "/foto/14.jpeg" },
+    { id: "img-15", type: "image", title: "Momen ke-15", category: "Ramadhan 2026", src: "/foto/15.jpeg" },
+    { id: "img-16", type: "image", title: "Momen ke-16", category: "Ramadhan 2026", src: "/foto/16.jpeg" },
+    { id: "img-17", type: "image", title: "Momen ke-17", category: "Ramadhan 2026", src: "/foto/17.jpeg" },
+    { id: "img-18", type: "image", title: "Momen ke-18", category: "Ramadhan 2026", src: "/foto/18.jpeg" },
+    { id: "img-19", type: "image", title: "Momen ke-19", category: "Ramadhan 2026", src: "/foto/19.jpeg" },
+    { id: "img-20", type: "image", title: "Momen ke-20", category: "Ramadhan 2026", src: "/foto/20.jpeg" },
+    { id: "img-21", type: "image", title: "Momen ke-21", category: "Ramadhan 2026", src: "/foto/21.jpeg" },
+    { id: "img-22", type: "image", title: "Momen ke-22", category: "Ramadhan 2026", src: "/foto/22.jpeg" },
+    { id: "img-23", type: "image", title: "Momen ke-23", category: "Ramadhan 2026", src: "/foto/23.jpeg" },
+    { id: "img-24", type: "image", title: "Momen ke-24", category: "Ramadhan 2026", src: "/foto/24.jpeg" },
+    { id: "img-25", type: "image", title: "Momen ke-25", category: "Ramadhan 2026", src: "/foto/25.jpeg" },
+    { id: "img-26", type: "image", title: "Momen ke-26", category: "Ramadhan 2026", src: "/foto/26.jpeg" },
+    { id: "img-28", type: "image", title: "Momen ke-28", category: "Ramadhan 2026", src: "/foto/28.jpeg" },
+    { id: "img-29", type: "image", title: "Momen ke-29", category: "Ramadhan 2026", src: "/foto/29.jpeg" },
+    { id: "img-30", type: "image", title: "Momen ke-30", category: "Ramadhan 2026", src: "/foto/30.jpeg" },
+    { id: "img-31", type: "image", title: "Momen ke-31", category: "Ramadhan 2026", src: "/foto/31.jpeg" },
+    { id: "img-32", type: "image", title: "Momen ke-32", category: "Ramadhan 2026", src: "/foto/32.jpeg" },
+    { id: "img-33", type: "image", title: "Momen ke-33", category: "Ramadhan 2026", src: "/foto/33.jpeg" },
+    { id: "img-34", type: "image", title: "Momen ke-34", category: "Ramadhan 2026", src: "/foto/34.jpeg" },
+    { id: "img-35", type: "image", title: "Momen ke-35", category: "Ramadhan 2026", src: "/foto/35.jpeg" },
+    { id: "img-36", type: "image", title: "Momen ke-36", category: "Ramadhan 2026", src: "/foto/36.jpeg" },
+    { id: "img-37", type: "image", title: "Momen ke-37", category: "Ramadhan 2026", src: "/foto/37.jpeg" },
+    { id: "img-38", type: "image", title: "Momen ke-38", category: "Ramadhan 2026", src: "/foto/38.jpeg" },
+    { id: "img-39", type: "image", title: "Momen ke-39", category: "Ramadhan 2026", src: "/foto/39.jpeg" },
+    { id: "img-40", type: "image", title: "Momen ke-40", category: "Ramadhan 2026", src: "/foto/40.jpeg" },
+    { id: "img-41", type: "image", title: "Momen ke-41", category: "Ramadhan 2026", src: "/foto/41.jpeg" },
+    { id: "img-42", type: "image", title: "Momen ke-42", category: "Ramadhan 2026", src: "/foto/42.jpeg" },
+    { id: "img-43", type: "image", title: "Momen ke-43", category: "Ramadhan 2026", src: "/foto/43.jpeg" },
+    { id: "img-44", type: "image", title: "Momen ke-44", category: "Ramadhan 2026", src: "/foto/44.jpeg" },
+    { id: "img-45", type: "image", title: "Momen ke-45", category: "Ramadhan 2026", src: "/foto/45.jpeg" },
+    { id: "img-46", type: "image", title: "Momen ke-46", category: "Ramadhan 2026", src: "/foto/46.jpeg" },
+    { id: "img-47", type: "image", title: "Momen ke-47", category: "Ramadhan 2026", src: "/foto/47.jpeg" },
+    { id: "img-48", type: "image", title: "Momen ke-48", category: "Ramadhan 2026", src: "/foto/48.jpeg" },
+    { id: "img-49", type: "image", title: "Momen ke-49", category: "Ramadhan 2026", src: "/foto/49.jpeg" },
+    { id: "img-50", type: "image", title: "Momen ke-50", category: "Ramadhan 2026", src: "/foto/50.jpeg" },
+    { id: "img-51", type: "image", title: "Momen ke-51", category: "Ramadhan 2026", src: "/foto/51.jpeg" },
+    { id: "img-52", type: "image", title: "Momen ke-52", category: "Ramadhan 2026", src: "/foto/52.jpeg" },
+    { id: "img-53", type: "image", title: "Momen ke-53", category: "Ramadhan 2026", src: "/foto/53.jpeg" },
+    { id: "img-54", type: "image", title: "Momen ke-54", category: "Ramadhan 2026", src: "/foto/54.jpeg" },
+    { id: "img-55", type: "image", title: "Momen ke-55", category: "Ramadhan 2026", src: "/foto/55.jpeg" },
+    { id: "img-56", type: "image", title: "Momen ke-56", category: "Ramadhan 2026", src: "/foto/56.jpeg" },
+    { id: "img-57", type: "image", title: "Momen ke-57", category: "Ramadhan 2026", src: "/foto/57.jpeg" },
+    // Videos
+    { id: "vid-1", type: "video", title: "Video ke-1", category: "Ramadhan 2026", src: "/video/1.mp4" },
+    { id: "vid-2", type: "video", title: "Video ke-2", category: "Ramadhan 2026", src: "/video/2.mp4" },
+    { id: "vid-3", type: "video", title: "Video ke-3", category: "Ramadhan 2026", src: "/video/3.mp4" },
+    { id: "vid-4", type: "video", title: "Video ke-4", category: "Ramadhan 2026", src: "/video/4.mp4" },
+    { id: "vid-5", type: "video", title: "Video ke-5", category: "Ramadhan 2026", src: "/video/5.mp4" },
+    { id: "vid-6", type: "video", title: "Video ke-6", category: "Ramadhan 2026", src: "/video/6.mp4" },
+    { id: "vid-7", type: "video", title: "Video ke-7", category: "Ramadhan 2026", src: "/video/7.mp4" },
+    { id: "vid-8", type: "video", title: "Video ke-8", category: "Ramadhan 2026", src: "/video/8.mp4" },
+    { id: "vid-9", type: "video", title: "Video ke-9", category: "Ramadhan 2026", src: "/video/9.mp4" },
+    { id: "vid-10", type: "video", title: "Video ke-10", category: "Ramadhan 2026", src: "/video/10.mp4" },
+    { id: "vid-11", type: "video", title: "Video ke-11", category: "Ramadhan 2026", src: "/video/11.mp4" },
+    { id: "vid-12", type: "video", title: "Video ke-12", category: "Ramadhan 2026", src: "/video/12.mp4" },
+    { id: "vid-13", type: "video", title: "Video ke-13", category: "Ramadhan 2026", src: "/video/13.mp4" },
 ];
 
 const GalleryPage = () => {
     const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
     const [filter, setFilter] = useState("All");
 
-    const categories = ["All", ...Array.from(new Set(galleryItems.map((item) => item.category)))];
-    const filteredItems = filter === "All" ? galleryItems : galleryItems.filter((item) => item.category === filter);
+    const filterOptions = ["All", "Foto", "Video"];
+    const filteredItems = galleryItems.filter((item) => {
+        if (filter === "All") return true;
+        if (filter === "Foto") return item.type === "image";
+        if (filter === "Video") return item.type === "video";
+        return true;
+    });
 
     const [isZoomed, setIsZoomed] = useState(false);
     const [zoomOrigin, setZoomOrigin] = useState("center");
@@ -137,16 +145,16 @@ const GalleryPage = () => {
 
                 {/* Filter Bar */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    {categories.map((cat) => (
+                    {filterOptions.map((opt) => (
                         <button
-                            key={cat}
-                            onClick={() => setFilter(cat)}
-                            className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${filter === cat
+                            key={opt}
+                            onClick={() => setFilter(opt)}
+                            className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${filter === opt
                                 ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105"
                                 : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-slate-700"
                                 }`}
                         >
-                            {cat}
+                            {opt}
                         </button>
                     ))}
                 </div>

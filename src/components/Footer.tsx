@@ -25,7 +25,7 @@ const Footer = () => {
               className="transition-transform hover:scale-110 active:scale-95"
             >
               <Logo3D
-                src="/logo.webp"
+                src="/images/logo.webp"
                 alt="Logo SMP Rajawali"
                 width={40}
                 height={36}
@@ -33,9 +33,9 @@ const Footer = () => {
             </a>
             <span className="text-xs">
               Web Developed by{" "}
-              <a 
-                href="https://wa.me/6289698009000" 
-                target="_blank" 
+              <a
+                href="https://wa.me/6289698009000"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-orange-500 hover:text-orange-600 transition-colors"
               >
