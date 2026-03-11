@@ -104,6 +104,18 @@ const GalleryPage = () => {
 
     const [isZoomed, setIsZoomed] = useState(false);
     const [zoomOrigin, setZoomOrigin] = useState("center");
+    const [columns, setColumns] = useState(3);
+
+    useEffect(() => {
+        const updateColumns = () => {
+            if (window.innerWidth >= 1024) setColumns(3);
+            else if (window.innerWidth >= 640) setColumns(2);
+            else setColumns(1);
+        };
+        updateColumns();
+        window.addEventListener("resize", updateColumns);
+        return () => window.removeEventListener("resize", updateColumns);
+    }, []);
 
     const selectedItem = selectedItemIndex !== null ? filteredItems[selectedItemIndex] : null;
 
@@ -171,68 +183,64 @@ const GalleryPage = () => {
                     ))}
                 </div>
 
-                {/* Grid Layout (Left-to-Right) */}
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                    <AnimatePresence mode="popLayout">
-                        {filteredItems.map((item, index) => (
-                            <motion.div
-                                key={item.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                className="relative break-inside-avoid group cursor-pointer overflow-hidden rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-500"
-                                onClick={() => setSelectedItemIndex(index)}
-                            >
-                                {/* Media Preview */}
-                                <div className="relative aspect-video sm:aspect-auto overflow-hidden">
-                                    {item.type === "video" ? (
-                                        <video
-                                            src={item.src}
-                                            className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                            muted
-                                            playsInline
-                                            onMouseOver={(e) => (e.target as HTMLVideoElement).play()}
-                                            onMouseOut={(e) => {
-                                                const video = e.target as HTMLVideoElement;
-                                                video.pause();
-                                                video.currentTime = 0;
-                                            }}
-                                        />
-                                    ) : (
-                                        <div className="relative aspect-[4/5] overflow-hidden">
-                                            <Image
-                                                src={item.src}
-                                                alt={item.title}
-                                                fill
-                                                className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                            />
-                                        </div>
-                                    )}
-
-                                    {/* Media Icon Overlay */}
-                                    <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-xl text-white">
-                                        {item.type === "video" ? (
-                                            <VideoCameraIcon className="w-5 h-5" />
-                                        ) : (
-                                            <PhotoIcon className="w-5 h-5" />
-                                        )}
-                                    </div>
-
-                                    {/* Hover Information */}
-                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">{item.category}</p>
-                                        <h3 className="text-white font-bold text-lg">{item.title}</h3>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+                {/* Masonry Grid with Left-to-Right distribution */}
+                <div className="flex flex-row gap-6">
+                    {Array.from({ length: columns }).map((_, colIndex) => (
+                        <div key={colIndex} className="flex-1 flex flex-col gap-6">
+                            {filteredItems
+                                .filter((_, idx) => idx % columns === colIndex)
+                                .map((item) => {
+                                    // Find true index in original filteredItems for accurate lightbox navigation
+                                    const originalIndex = filteredItems.findIndex(fi => fi.id === item.id);
+                                    return (
+                                        <motion.div
+                                            key={item.id}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="relative group cursor-pointer overflow-hidden rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-500"
+                                            onClick={() => setSelectedItemIndex(originalIndex)}
+                                        >
+                                            {/* Media Preview */}
+                                            <div className="relative overflow-hidden">
+                                                {item.type === "video" ? (
+                                                    <video
+                                                        src={item.src}
+                                                        className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                                        muted
+                                                        playsInline
+                                                        onMouseOver={(e) => (e.target as HTMLVideoElement).play()}
+                                                        onMouseOut={(e) => {
+                                                            const video = e.target as HTMLVideoElement;
+                                                            video.pause();
+                                                            video.currentTime = 0;
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={item.src}
+                                                        alt={item.title}
+                                                        className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                                    />
+                                                )}
+                                                {/* Media Icon Overlay */}
+                                                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-xl text-white">
+                                                    {item.type === "video" ? <VideoCameraIcon className="w-5 h-5" /> : <PhotoIcon className="w-5 h-5" />}
+                                                </div>
+                                                {/* Hover Info */}
+                                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">{item.category}</p>
+                                                    <h3 className="text-white font-bold text-lg">{item.title}</h3>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    );
+                                })}
+                        </div>
+                    ))}
+                </div>
             </main>
 
             {/* Full-Screen Lightbox */}
