@@ -37,7 +37,7 @@ const Footer = () => {
                 href="https://wa.me/6289698009000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-orange-500 hover:text-orange-600 transition-colors"
+                className="font-medium text-orange-700 hover:text-orange-800 transition-colors px-2 py-1 rounded-md"
               >
                 Rza
               </a>
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Right Section: Privacy Policy */}
           <div className="flex items-center space-x-6">
             <a
-              className="text-xs hover:text-orange-500 transition-colors duration-200"
+              className="text-xs hover:text-orange-700 transition-colors duration-200 px-2 py-1 rounded-md cursor-pointer"
             >
               Privacy Policy
             </a>

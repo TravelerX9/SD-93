@@ -170,7 +170,7 @@ const GalleryPage = () => {
                             Moments of 2026
                         </span>
                         <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6">
-                            Gallery <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">Visual</span>
+                            Gallery <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-500">Visual</span>
                         </h1>
                         <p className="text-lg text-slate-600 dark:text-slate-400 mx-auto leading-relaxed">
                             Arsip kenangan, acara, ngopi bareng, teman SMP Rajawali dalam menjalin silahturahmi dan persahabatan.
@@ -184,8 +184,8 @@ const GalleryPage = () => {
                         <button
                             key={opt}
                             onClick={() => setFilter(opt)}
-                            className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${filter === opt
-                                ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105"
+                            className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${filter === opt
+                                ? "bg-orange-600 text-white shadow-lg shadow-orange-600/30 scale-105"
                                 : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-orange-50 dark:hover:bg-slate-700"
                                 }`}
                         >
@@ -233,11 +233,16 @@ const GalleryPage = () => {
                                                         }}
                                                     />
                                                 ) : (
-                                                    <img
-                                                        src={item.src}
-                                                        alt={item.title}
-                                                        className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                                    />
+                                                    <div className="relative aspect-auto">
+                                                        <Image
+                                                            src={item.src}
+                                                            alt={item.title}
+                                                            width={500}
+                                                            height={500}
+                                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                            className="w-full h-auto object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                                        />
+                                                    </div>
                                                 )}
                                                 {/* Media Icon Overlay */}
                                                 <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-xl text-white">
@@ -270,7 +275,7 @@ const GalleryPage = () => {
                         {/* Close Button - Top Right */}
                         <button
                             onClick={() => setSelectedItemIndex(null)}
-                            className="absolute top-4 right-4 md:top-6 md:right-6 z-[130] p-2.5 md:p-4 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-xl border border-white/20 hover:scale-110 active:scale-90"
+                            className="absolute top-4 right-4 md:top-6 md:right-6 z-[130] p-4 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-xl border border-white/20 hover:scale-110 active:scale-90"
                         >
                             <XMarkIcon className="w-4 h-4" />
                         </button>

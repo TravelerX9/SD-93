@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CalendarIcon, MapPinIcon, ClockIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 const events = [
@@ -60,7 +61,7 @@ const EventPage = () => {
                                 School Agenda 2026
                             </span>
                             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
-                                Kegiatan & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">Event Seru</span>
+                                Kegiatan & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-500">Event Seru</span>
                             </h1>
                             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mx-auto mb-10">
                                 Temukan berbagai agenda menarik mulai dari seni, sains, hingga kegiatan sosial yang dirancang untuk menginspirasi siswa SMP Rajawali.
@@ -84,9 +85,11 @@ const EventPage = () => {
                                     className="group relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
                                 >
                                     <div className="relative h-56 overflow-hidden">
-                                        <img
+                                        <Image
                                             src={event.image}
                                             alt={event.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                         <div className="absolute top-4 left-4">
@@ -97,26 +100,26 @@ const EventPage = () => {
                                     </div>
 
                                     <div className="p-6">
-                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-orange-500 transition-colors">
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-orange-600 transition-colors">
                                             {event.title}
                                         </h3>
 
                                         <div className="space-y-3 mb-6">
                                             <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                                                <CalendarIcon className="w-5 h-5 mr-3 text-orange-500" />
+                                                <CalendarIcon className="w-5 h-5 mr-3 text-orange-600" />
                                                 {event.date}
                                             </div>
                                             <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                                                <ClockIcon className="w-5 h-5 mr-3 text-orange-500" />
+                                                <ClockIcon className="w-5 h-5 mr-3 text-orange-600" />
                                                 {event.time}
                                             </div>
                                             <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                                                <MapPinIcon className="w-5 h-5 mr-3 text-orange-500" />
+                                                <MapPinIcon className="w-5 h-5 mr-3 text-orange-600" />
                                                 {event.location}
                                             </div>
                                         </div>
 
-                                        <button className="w-full py-3 px-4 bg-gray-100 dark:bg-slate-700 text-gray-900 dark:text-white font-bold rounded-2xl hover:bg-orange-500 hover:text-white dark:hover:bg-orange-600 transition-all duration-300 transform active:scale-95">
+                                        <button className="w-full py-4 px-4 bg-gray-100 dark:bg-slate-700 text-gray-900 dark:text-white font-bold rounded-2xl hover:bg-orange-600 hover:text-white dark:hover:bg-orange-700 transition-all duration-300 transform active:scale-95">
                                             Lihat Detail
                                         </button>
                                     </div>
@@ -129,7 +132,7 @@ const EventPage = () => {
                 {/* Newsletter / CTA */}
                 <section className="py-20">
                     <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="bg-gradient-to-br from-orange-500 to-pink-600 rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+                        <div className="bg-gradient-to-br from-orange-600 to-pink-600 rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
                             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
 

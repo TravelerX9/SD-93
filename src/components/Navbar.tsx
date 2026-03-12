@@ -47,16 +47,12 @@ const Navbar = () => {
 
                     <div className="flex items-center space-x-8">
                         <div className="hidden md:flex items-center space-x-1">
-                            <Link href="/">
-                                <span className={`text-sm transition-colors duration-200 cursor-pointer ${pathname === '/' ? 'font-bold text-orange-500' : 'font-medium text-gray-500 dark:text-gray-400 hover:text-orange-500'}`}>
-                                    Home
-                                </span>
+                            <Link href="/" className={`px-4 py-3 text-sm transition-colors duration-200 rounded-lg ${pathname === '/' ? 'font-bold text-orange-500' : 'font-medium text-gray-500 dark:text-gray-400 hover:text-orange-700'}`}>
+                                Home
                             </Link>
-                            <span className="text-gray-300 dark:text-gray-700 mx-2">|</span>
-                            <Link href="/gallery-2026">
-                                <span className={`text-sm transition-colors duration-200 cursor-pointer ${pathname === '/gallery-2026' ? 'font-bold text-orange-500' : 'font-medium text-gray-500 dark:text-gray-400 hover:text-orange-500'}`}>
-                                    Gallery - 2026
-                                </span>
+                            <span className="text-gray-300 dark:text-gray-700 mx-1">|</span>
+                            <Link href="/gallery-2026" className={`px-4 py-3 text-sm transition-colors duration-200 rounded-lg ${pathname === '/gallery-2026' ? 'font-bold text-orange-500' : 'font-medium text-gray-500 dark:text-gray-400 hover:text-orange-700'}`}>
+                                Gallery - 2026
                             </Link>
                         </div>
 
@@ -65,7 +61,7 @@ const Navbar = () => {
                             <motion.button
                                 whileTap={{ scale: 0.9 }}
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="p-2 rounded-xl md:hidden bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-orange-500 hover:ring-2 hover:ring-orange-500 transition-all duration-300"
+                                className="p-3 rounded-xl md:hidden bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-orange-500 hover:ring-2 hover:ring-orange-500 transition-all duration-300"
                                 aria-label="Toggle Mobile Menu"
                             >
                                 {isMenuOpen ? (
@@ -79,7 +75,7 @@ const Navbar = () => {
                             <motion.button
                                 whileTap={{ scale: 0.9 }}
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                className="relative p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-yellow-400 hover:ring-2 hover:ring-orange-500 transition-all duration-300 overflow-hidden"
+                                className="relative p-3 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-yellow-400 hover:ring-2 hover:ring-orange-500 transition-all duration-300 overflow-hidden"
                                 aria-label="Toggle Dark Mode"
                             >
                                 <AnimatePresence mode="wait" initial={false}>

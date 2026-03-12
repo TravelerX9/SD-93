@@ -44,6 +44,7 @@ const Home = () => {
               alt="SMP RAJAWALI Campus"
               fill
               className="object-cover object-center brightness-[0.7] dark:brightness-[0.4]"
+              sizes="100vw"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/40 to-transparent dark:from-black dark:via-black/60 dark:to-transparent" />
@@ -67,25 +68,31 @@ const Home = () => {
                 Di SMP RAJAWALI, kami percaya setiap anak memiliki potensi luar biasa. Dengan kurikulum modern dan lingkungan yang mendukung, kami membekali siswa untuk masa depan yang gemilang.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link href="/">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-orange-500/30 transition-all transition-duration-300 w-full sm:w-auto"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
+                >
+                  <Link
+                    href="/"
+                    className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-orange-700/30 transition-all duration-300"
                   >
                     <span>Daftar Sekarang</span>
                     <ArrowRightIcon className="h-5 w-5" />
-                  </motion.button>
-                </Link>
-                <Link href="/gallery-2026">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-2xl font-bold transition-all transition-duration-300 w-full sm:w-auto text-center"
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
+                >
+                  <Link
+                    href="/gallery-2026"
+                    className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-2xl font-bold transition-all duration-300 text-center block"
                   >
                     Gallery Event Tahunan
-                  </motion.button>
-                </Link>
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -129,7 +136,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-gray-600 dark:text-gray-400 text-lg mx-auto"
+                className="text-gray-700 dark:text-gray-400 text-lg mx-auto"
               >
                 Kebersamaan yang tak terlupakan dalam rangkaian acara Silahturahmi Akbar SMP Rajawali.
                 Menjalin rindu, berbagi cerita, dan membangun masa depan bersama.
@@ -154,6 +161,7 @@ const Home = () => {
                     src={`/foto/${id}.jpeg`}
                     alt={`Event Photo ${id}`}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
@@ -170,16 +178,19 @@ const Home = () => {
               transition={{ delay: 0.4 }}
               className="mt-16 text-center"
             >
-              <Link href="/gallery-2026">
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(249 115 22 / 0.3)" }}
-                  whileTap={{ scale: 0.95 }}
+              <motion.div
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(194 65 12 / 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block"
+              >
+                <Link
+                  href="/gallery-2026"
                   className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-black inline-flex items-center space-x-3 shadow-xl transition-all duration-300"
                 >
                   <span>Lihat Seluruh Gallery</span>
                   <ArrowRightIcon className="h-5 w-5 stroke-[3]" />
-                </motion.button>
-              </Link>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -201,7 +212,7 @@ const Home = () => {
                 { label: "Alumni Sukses", value: "3000+", icon: LightBulbIcon },
               ].map((stat, idx) => (
                 <motion.div key={idx} variants={itemVariants} className="text-center group">
-                  <div className="inline-flex p-3 rounded-2xl bg-white dark:bg-slate-800 shadow-xl group-hover:shadow-orange-500/10 transition-all duration-300 mb-4">
+                  <div className="inline-flex p-3 rounded-2xl bg-white dark:bg-slate-800 shadow-xl group-hover:shadow-orange-600/10 transition-all duration-300 mb-4">
                     <stat.icon className="h-8 w-8 text-orange-500" />
                   </div>
                   <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">{stat.value}</h3>
@@ -223,7 +234,7 @@ const Home = () => {
               className="relative"
             >
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl z-10">
-                <Image src="/images/academic.png" alt="Siswa SMP" width={600} height={400} className="object-cover" />
+                <Image src="/images/academic.png" alt="Siswa SMP" width={600} height={400} className="object-cover" sizes="(max-width: 768px) 100vw, 600px" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-orange-500 rounded-[3rem] z-0 hidden lg:block" />
               <div className="absolute top-20 -left-8 -translate-y-1/2 p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-2xl z-20 hidden lg:flex items-center space-x-4">
@@ -232,7 +243,7 @@ const Home = () => {
                 </div>
                 <div>
                   <p className="text-sm font-bold dark:text-white">Community Driven</p>
-                  <p className="text-xs text-gray-500">Collaborative Environment</p>
+                  <p className="text-xs text-gray-700">Collaborative Environment</p>
                 </div>
               </div>
             </motion.div>
