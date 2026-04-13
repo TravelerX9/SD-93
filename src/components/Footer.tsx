@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex items-center space-x-3">
             <div className="flex relative left-4 flex-col sm:flex-row sm:items-center sm:space-x-2">
               <span className="text-sm font-bold text-gray-900 dark:text-white">
-                SMP RAJAWALI '96
+                SDN Belitung Selatan 2 '93
               </span>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="font-medium text-orange-700 hover:text-orange-800 transition-colors px-2 py-1 rounded-md"
               >
-                Rza
+                Rza - 0896.9800.9000
               </a>
             </span>
           </div>

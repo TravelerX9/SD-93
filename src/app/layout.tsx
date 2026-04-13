@@ -33,8 +33,8 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  title: "SMP RAJAWALI '96 - Mencetak Generasi Cerdas & Berakhlak Mulia",
-  description: 'Website resmi SMP RAJAWALI. Menghadirkan ekosistem pendidikan modern yang memadukan keunggulan akademik dengan pembentukan karakter.',
+  title: "SDN Belitung Selatan 2 '93 - Website Galleri Pertemanan",
+  description: "Website SDN Belitung Selatan 2 '93.",
   icons: {
     icon: '/images/logo.webp',
   },

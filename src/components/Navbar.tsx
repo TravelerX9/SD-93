@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { SunIcon, MoonIcon, AcademicCapIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -40,7 +39,7 @@ const Navbar = () => {
                                 <AcademicCapIcon className="h-6 w-6 text-white" />
                             </div>
                             <span className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-orange-500 group-hover:to-orange-600 transition-all duration-300">
-                                SMP RAJAWALI '96
+                                SDN Belitung Selatan 2 '93
                             </span>
                         </motion.div>
                     </Link>

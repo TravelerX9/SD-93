@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import {
@@ -65,7 +64,7 @@ const Home = () => {
                 Mencetak Generasi <span className="text-orange-500">Cerdas</span> & <span className="text-orange-500">Berakhlak Mulia</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-200 mb-10">
-                Di SMP RAJAWALI, kami percaya setiap anak memiliki potensi luar biasa. Dengan kurikulum modern dan lingkungan yang mendukung, kami membekali siswa untuk masa depan yang gemilang.
+                Di SDN Belitung Selatan 2, kami percaya setiap anak memiliki potensi luar biasa. Dengan kurikulum modern dan lingkungan yang mendukung, kami membekali siswa untuk masa depan yang gemilang.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <motion.div
@@ -73,13 +72,6 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto"
                 >
-                  <Link
-                    href="/"
-                    className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-orange-700/30 transition-all duration-300"
-                  >
-                    <span>Daftar Sekarang</span>
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </Link>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -90,7 +82,7 @@ const Home = () => {
                     href="/gallery-2026"
                     className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-2xl font-bold transition-all duration-300 text-center block"
                   >
-                    Gallery Event Tahunan
+                    Gallery Kumpul Tahunan
                   </Link>
                 </motion.div>
               </div>
@@ -120,7 +112,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4 block"
               >
-                Dokumentasi Acara
+                Dokumentasi Pertemuan
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
@@ -138,8 +130,8 @@ const Home = () => {
                 transition={{ delay: 0.2 }}
                 className="text-gray-700 dark:text-gray-400 text-lg mx-auto"
               >
-                Kebersamaan yang tak terlupakan dalam rangkaian acara Silahturahmi Akbar SMP Rajawali.
-                Menjalin rindu, berbagi cerita, dan membangun masa depan bersama.
+                Kebersamaan yang tak terlupakan dalam acara Silahturahmi SDN Belitung Selatan 2 '93.
+                Menjalin Pertemanan, berbagi cerita, dan membangun masa depan bersama.
               </motion.p>
             </div>
 
@@ -150,7 +142,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {[1, 33, 20, 35, 17, 30, 28, 69].map((id) => (
+              {["0.1", "alid", "bambang1", "basid", "bayu", "edi1", "juhdi1", "rahman", "sinode", "ucha", "vina"].map((id) => (
                 <motion.div
                   key={id}
                   variants={itemVariants}
@@ -234,7 +226,7 @@ const Home = () => {
               className="relative"
             >
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl z-10">
-                <Image src="/images/academic.png" alt="Siswa SMP" width={600} height={400} className="object-cover" sizes="(max-width: 768px) 100vw, 600px" />
+                <Image src="/images/academic.png" alt="Siswa SDN" width={600} height={400} className="object-cover" sizes="(max-width: 768px) 100vw, 600px" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-orange-500 rounded-[3rem] z-0 hidden lg:block" />
               <div className="absolute top-20 -left-8 -translate-y-1/2 p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-2xl z-20 hidden lg:flex items-center space-x-4">
