@@ -87,6 +87,15 @@ const galleryItems = [
     { id: "img-81", type: "image", title: "Momen ke-81", category: "Ramadhan 2026", src: "/foto/12.9.jpg" },
     { id: "img-82", type: "image", title: "Momen ke-82", category: "Ramadhan 2026", src: "/foto/12.10.jpg" },
     { id: "img-83", type: "image", title: "Momen ke-83", category: "Ramadhan 2026", src: "/foto/2015.jpeg" },
+    { id: "img-84", type: "image", title: "Momen ke-84", category: "Ramadhan 2026", src: "/foto2/1704a.jpeg" },
+    { id: "img-85", type: "image", title: "Momen ke-85", category: "Ramadhan 2026", src: "/foto2/1704b.jpeg" },
+    { id: "img-86", type: "image", title: "Momen ke-86", category: "Ramadhan 2026", src: "/foto2/1704c.jpeg" },
+    { id: "img-87", type: "image", title: "Momen ke-87", category: "Ramadhan 2026", src: "/foto2/1704d.jpeg" },
+    { id: "img-88", type: "image", title: "Momen ke-88", category: "Ramadhan 2026", src: "/foto2/1704e.jpeg" },
+    { id: "img-89", type: "image", title: "Momen ke-89", category: "Ramadhan 2026", src: "/foto2/1704f.jpeg" },
+    { id: "img-90", type: "image", title: "Momen ke-90", category: "Ramadhan 2026", src: "/foto2/1704g.jpeg" },
+    // Videos
+    { id: "vid-1", type: "video", title: "Video ke-1", category: "Ramadhan 2026", src: "/video/1.mp4" },
 ];
 
 const GalleryPage = () => {
